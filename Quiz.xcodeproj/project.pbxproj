@@ -77,12 +77,12 @@
 			isa = PBXGroup;
 			children = (
 				A96EB14C1E67014600F48F53 /* QuizSession.swift */,
-				5DDC301C2433E3F300161ACB /* Children */,
+				5DDC301C2433E3F300161ACB /* Children_Implementations */,
 			);
 			name = QuizSession;
 			sourceTree = "<group>";
 		};
-		5DDC301C2433E3F300161ACB /* Children */ = {
+		5DDC301C2433E3F300161ACB /* Children_Implementations */ = {
 			isa = PBXGroup;
 			children = (
 				A9FBA1A11E812A72007DCBF2 /* NinjaQuizSession.swift */,
@@ -90,7 +90,25 @@
 				A9FBA19D1E8128E5007DCBF2 /* JourneymanQuizSession.swift */,
 				A9FBA19E1E8128E5007DCBF2 /* RookieQuizSession.swift */,
 			);
-			name = Children;
+			name = Children_Implementations;
+			sourceTree = "<group>";
+		};
+		5DDC301D2433E90F00161ACB /* QuestionRepository */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */,
+				5DDC301E2433E94B00161ACB /* Children_Implementations */,
+			);
+			name = QuestionRepository;
+			sourceTree = "<group>";
+		};
+		5DDC301E2433E94B00161ACB /* Children_Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBA19B1E811A6D007DCBF2 /* RemoteQuestionRepository.swift */,
+				A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */,
+			);
+			name = Children_Implementations;
 			sourceTree = "<group>";
 		};
 		CF4FCEC01C74A5C800133338 = {
@@ -116,9 +134,7 @@
 				5DDC301B2433E3A300161ACB /* QuizSession */,
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
-				A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */,
-				A9FBA19B1E811A6D007DCBF2 /* RemoteQuestionRepository.swift */,
-				A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */,
+				5DDC301D2433E90F00161ACB /* QuestionRepository */,
 				CF4FCED01C74A5C800133338 /* ViewController.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
