@@ -22,6 +22,12 @@ class QuizSession {
     // Public interface to get the score, as a property
     var score: Int {
         get { return _userSession.score }
+        set (value) { _userSession.score = value }
+    }
+    
+    var _score: Int {
+        get { return score }
+        set (value) { score = value }
     }
     
     var userSession: UserSession {

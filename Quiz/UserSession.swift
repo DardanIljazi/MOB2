@@ -14,6 +14,7 @@ class UserSession {
     
     var score: Int {
         get { return _score }
+        set (value) { _score = value }
     }
     
     var username: String {
