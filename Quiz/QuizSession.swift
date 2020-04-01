@@ -42,7 +42,13 @@ class QuizSession {
     init(questionRepository: QuestionRepository, totalQuestionCount: Int) {
         _questionRepository = questionRepository
         _totalQuestionCount = totalQuestionCount
-        
+        _userSession = UserSession(username: "")
+    }
+    
+    init(questionRepository: QuestionRepository, totalQuestionCount: Int, userSession: UserSession) {
+        _questionRepository = questionRepository
+        _totalQuestionCount = totalQuestionCount
+        _userSession = userSession
     }
     
     func nextQuestion() -> Question? {
