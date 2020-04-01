@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D84899B2434CE8000DAE0C6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84899A2434CE8000DAE0C6 /* UserSession.swift */; };
 		A96EB14D1E67014600F48F53 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EB14C1E67014600F48F53 /* QuizSession.swift */; };
 		A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */; };
 		A9FBA19A1E81191C007DCBF2 /* StaticQuestionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D84899A2434CE8000DAE0C6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A96EB14C1E67014600F48F53 /* QuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
 		A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRepository.swift; sourceTree = "<group>"; };
 		A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticQuestionRepository.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A96EB14C1E67014600F48F53 /* QuizSession.swift */,
+				5D84899A2434CE8000DAE0C6 /* UserSession.swift */,
 				5DDC301C2433E3F300161ACB /* Children_Implementations */,
 			);
 			name = QuizSession;
@@ -267,6 +270,7 @@
 				A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */,
 				CF4FCECF1C74A5C800133338 /* AppDelegate.swift in Sources */,
 				A9FBA1A31E812A72007DCBF2 /* NinjaQuizSession.swift in Sources */,
+				5D84899B2434CE8000DAE0C6 /* UserSession.swift in Sources */,
 				A9FBA19A1E81191C007DCBF2 /* StaticQuestionRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
