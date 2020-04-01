@@ -11,9 +11,9 @@ import Foundation
 class RookieQuizSession : QuizSession {
     var _currentQuestionCount: Int
     
-    init(questionRepository: QuestionRepository) {
+    override  init(questionRepository: QuestionRepository, totalQuestionCount: Int = 10) {
         _currentQuestionCount = 0
-        super.init(questionRepository: questionRepository, totalQuestionCount: 10)
+        super.init(questionRepository: questionRepository, totalQuestionCount: totalQuestionCount)
     }
     
     override func nextQuestion() -> Question? {

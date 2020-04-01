@@ -11,7 +11,7 @@ import Foundation
 class JourneymanQuizSession : QuizSession {
     var _currentQuestionCount: Int
     
-    override init(questionRepository: QuestionRepository, totalQuestionCount: Int = 10) {
+    override  init(questionRepository: QuestionRepository, totalQuestionCount: Int = 10) {
         _currentQuestionCount = 0
         super.init(questionRepository: questionRepository, totalQuestionCount: totalQuestionCount)
     }

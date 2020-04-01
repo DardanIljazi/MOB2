@@ -11,7 +11,8 @@ import UIKit
 class StartViewController: UIViewController {
     
     @IBOutlet var scoreLabel: UILabel!
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet var username: UITextField!
+    @IBOutlet var questionNumber: UIStepper!
     
     var session: QuizSession?
 
@@ -31,7 +32,7 @@ class StartViewController: UIViewController {
             return;
         }
         
-        session = RookieQuizSession(questionRepository: makeQuestionRepository())
+        session = RookieQuizSession(questionRepository: makeQuestionRepository(), totalQuestionCount: Int(questionNumber!.value))
         showSessionView(session!)
     }
 
@@ -40,7 +41,7 @@ class StartViewController: UIViewController {
             return;
         }
         
-        session = JourneymanQuizSession(questionRepository: makeQuestionRepository())
+        session = JourneymanQuizSession(questionRepository: makeQuestionRepository(), totalQuestionCount: Int(questionNumber!.value))
         showSessionView(session!)
     }
     
@@ -49,7 +50,7 @@ class StartViewController: UIViewController {
             return;
         }
         
-        session = WarriorQuizSession(questionRepository: makeQuestionRepository())
+        session = WarriorQuizSession(questionRepository: makeQuestionRepository(), totalQuestionCount: Int(questionNumber!.value))
         showSessionView(session!)
     }
     
@@ -58,7 +59,7 @@ class StartViewController: UIViewController {
             return;
         }
         
-        session = NinjaQuizSession(questionRepository: makeQuestionRepository())
+        session = NinjaQuizSession(questionRepository: makeQuestionRepository(), totalQuestionCount: Int(questionNumber!.value))
         showSessionView(session!)
     }
     
