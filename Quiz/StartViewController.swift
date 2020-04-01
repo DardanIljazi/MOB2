@@ -11,6 +11,7 @@ import UIKit
 class StartViewController: UIViewController {
     
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet weak var username: UITextField!
     
     var session: QuizSession?
 
