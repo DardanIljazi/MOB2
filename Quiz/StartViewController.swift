@@ -27,21 +27,37 @@ class StartViewController: UIViewController {
     }
 
     @IBAction func rookieSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = RookieQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
 
     @IBAction func journeymanSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = JourneymanQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
     
     @IBAction func warriorSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = WarriorQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
     
     @IBAction func ninjaSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = NinjaQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
@@ -49,6 +65,10 @@ class StartViewController: UIViewController {
     func makeQuestionRepository() -> QuestionRepository {
         //return RemoteQuestionRepository(remoteUrl: "http://localhost:4567")
         return StaticQuestionRepository()
+    }
+    
+    func canProceedFurther() -> Bool {
+        return username.hasText;
     }
     
     func showSessionView(_ session: QuizSession)
