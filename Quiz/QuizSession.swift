@@ -17,21 +17,12 @@ class QuizSession {
     let _questionRepository: QuestionRepository
     var _currentQuestion: Question!
     var _totalQuestionCount: Int
-    var _userSession: UserSession
+    var _score: Int
     
     // Public interface to get the score, as a property
     var score: Int {
-        get { return _userSession.score }
-        set (value) { _userSession.score = value }
-    }
-    
-    var _score: Int {
-        get { return score }
-        set (value) { score = value }
-    }
-    
-    var userSession: UserSession {
-        get { return _userSession }
+        get { return _score }
+        set (value) { _score = value }
     }
 
     // Public interface to get the total question count
@@ -42,13 +33,7 @@ class QuizSession {
     init(questionRepository: QuestionRepository, totalQuestionCount: Int) {
         _questionRepository = questionRepository
         _totalQuestionCount = totalQuestionCount
-        _userSession = UserSession(username: "")
-    }
-    
-    init(questionRepository: QuestionRepository, totalQuestionCount: Int, userSession: UserSession) {
-        _questionRepository = questionRepository
-        _totalQuestionCount = totalQuestionCount
-        _userSession = userSession
+        _score = 0
     }
     
     func nextQuestion() -> Question? {

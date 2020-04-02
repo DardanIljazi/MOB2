@@ -13,6 +13,9 @@ class StartViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var username: UITextField!
     @IBOutlet var questionNumber: UIStepper!
+    @IBOutlet var questionNumberLabel: UILabel!
+    
+    var _usersSessionsManager: UsersSessionsManager
     
     var session: QuizSession?
 
@@ -27,6 +30,10 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func valueChanged(_ sender: UIStepper) {
+        questionNumberLabel.text = String(Int(sender.value))
+    }
+    
     @IBAction func rookieSessionClick(_ sender: AnyObject) {
         if (!canProceedFurther()) {
             return;
@@ -69,7 +76,7 @@ class StartViewController: UIViewController {
     }
     
     func canProceedFurther() -> Bool {
-        return username.hasText;
+        return username.hasText
     }
     
     func showSessionView(_ session: QuizSession)
@@ -78,6 +85,7 @@ class StartViewController: UIViewController {
         
         sessionViewController.session = session
         sessionViewController.sessionCompletion = {
+            
             self.showScore()
         }
         
