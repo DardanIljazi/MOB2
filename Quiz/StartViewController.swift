@@ -14,10 +14,11 @@ class StartViewController: UIViewController {
     @IBOutlet var username: UITextField!
     @IBOutlet var questionNumber: UIStepper!
     @IBOutlet var questionNumberLabel: UILabel!
+    @IBOutlet var leaderboard: UILabel!
     
-    var _usersSessionsManager: UsersSessionsManager
-    
+    var _usersSessionsManager: UsersSessionsManager = UsersSessionsManager()
     var session: QuizSession?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,10 @@ class StartViewController: UIViewController {
         sessionViewController.session = session
         sessionViewController.sessionCompletion = {
             
+            self._usersSessionsManager.addUserSession(userSession: UserSession(username: self.username.text!, score: session.score))
+            
             self.showScore()
+            self.showLeaderboard()
         }
         
         present(sessionViewController, animated: true, completion: nil)
@@ -94,6 +98,15 @@ class StartViewController: UIViewController {
 
     func showScore() {
         scoreLabel.text = "GAME OVER\nvotre score: \(session!.score) / \(session!.questionsCount)"
+    }
+    
+    func showLeaderboard() {
+        var finalText = String("")
+        _usersSessionsManager.userSessions.forEach { usrSession in
+            finalText += "\(usrSession.username) a fait \(usrSession.score)\n"
+        }
+        
+        leaderboard.text = finalText
     }
     
 }

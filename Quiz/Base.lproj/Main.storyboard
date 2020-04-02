@@ -126,6 +126,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="leaderboard" destination="n4s-fL-tek" id="fDt-ct-NRz"/>
                         <outlet property="questionNumber" destination="s87-p0-eVG" id="Y8f-cY-QgW"/>
                         <outlet property="questionNumberLabel" destination="xG0-aY-ClL" id="DRv-Sd-CYf"/>
                         <outlet property="scoreLabel" destination="QDq-ib-6yU" id="aOE-fH-vUc"/>

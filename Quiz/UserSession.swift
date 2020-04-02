@@ -21,8 +21,8 @@ class UserSession {
         get { return _username }
     }
     
-    init(username: String) {
+    init(username: String, score: Int?) {
         _username = username
-        _score = 0
+        _score = score ?? 0
     }
 }
