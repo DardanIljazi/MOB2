@@ -46,7 +46,7 @@ class StartViewController: UIViewController {
         showSessionView(session!)
     }
     
-    @IBAction func challengeQuizSession(_ sender: Any) {
+    @IBAction func challengeSessionClick(_ sender: Any) {
         if (!areAllMinimumRequiredAttributesSet()) {
             return;
         }
@@ -54,6 +54,7 @@ class StartViewController: UIViewController {
         session = ChallengeQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
+    
     
     @IBAction func warriorSessionClick(_ sender: AnyObject) {
         if (!areAllMinimumRequiredAttributesSet()) {

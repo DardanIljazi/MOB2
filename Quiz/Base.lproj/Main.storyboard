@@ -67,6 +67,7 @@
                                         <state key="normal" title="Challenge"/>
                                         <connections>
                                             <action selector="challengeQuizSession:" destination="oLk-ab-hCW" eventType="touchUpInside" id="aDH-Jg-Ut5"/>
+                                            <action selector="challengeSessionClick:" destination="oLk-ab-hCW" eventType="touchUpInside" id="AXc-fq-cTz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-MS-g84">
