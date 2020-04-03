@@ -44,7 +44,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerClick(_ sender: UIButton) {
-        // To avoid conditions nesting, these "states" have been created
+        // To avoid conditions nesting (that implies code "dependency"),
+        // these "states" have been created (a chain of responsibility is better but it is overkill here)
         var canPassToNextOne: Bool = false
         var gameHasToBeOver: Bool = false
         
@@ -65,6 +66,21 @@ class ViewController: UIViewController {
             makeGameOver()
         }
     }
+    
+    /*
+    @IBAction func answerClick(_ sender: UIButton) {
+     
+        // Tell the session the chosen answer
+        if session.checkAnswer(sender.currentTitle!) {
+             // Pass to the next question only if score is greater than 0, otherwise game is finished --> This implies that score is set into checkAnswer ==> Dependency on this part of the code
+             if (session.score > 0) {
+                nextOne()
+             } else {
+                // No more question, game finished
+                makeGameOver()
+             }
+        }
+    }*/
 
     func nextOne() {
         hintLabel.isHidden = true
