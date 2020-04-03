@@ -22,12 +22,12 @@ class ViewController: UIViewController {
     var sessionCompletion: (() -> Void)!
     var timer: Timer!
     
-    enum GameState {
+    enum QuizState {
         case CanGoToNextQuestion
         case HasToBeOver
     }
     
-    var currentGameState: GameState = .CanGoToNextQuestion
+    var currentGameState: QuizState = .CanGoToNextQuestion
     
     
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             currentGameState = .HasToBeOver
         }
 
-        
+        // Decide action/method to call to take based on state
         switch currentGameState {
         case .CanGoToNextQuestion:
             nextOne()
