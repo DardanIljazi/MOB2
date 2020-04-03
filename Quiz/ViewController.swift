@@ -22,6 +22,14 @@ class ViewController: UIViewController {
     var sessionCompletion: (() -> Void)!
     var timer: Timer!
     
+    enum GameState {
+        case CanGoToNextQuestion
+        case HasToBeOver
+    }
+    
+    var currentGameState: GameState = .CanGoToNextQuestion
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,25 +52,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerClick(_ sender: UIButton) {
-        // To avoid conditions nesting (that implies code "dependency"),
-        // these "states" have been created (a chain of responsibility is better but it is overkill here)
-        var canPassToNextOne: Bool = false
-        var gameHasToBeOver: Bool = false
-        
         // Tell the session the chosen answer
         if session.checkAnswer(sender.currentTitle!) {
-            canPassToNextOne = true
-        }
-        if (session.score <= 0) {
-            canPassToNextOne = false
-            gameHasToBeOver = true
+            currentGameState = .CanGoToNextQuestion
         }
         
-        // Actions to do for each state
-        if (canPassToNextOne) {
-            nextOne()
+        if (session.score <= 0) {
+            currentGameState = .HasToBeOver
         }
-        if (gameHasToBeOver) {
+
+        
+        switch currentGameState {
+        case .CanGoToNextQuestion:
+            nextOne()
+        case .HasToBeOver:
             makeGameOver()
         }
     }
