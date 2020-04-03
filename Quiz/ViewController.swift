@@ -49,6 +49,8 @@ class ViewController: UIViewController {
             // Pass to the next question
             nextOne()
         }
+        
+        if (session)
     }
 
     func nextOne() {

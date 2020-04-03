@@ -29,7 +29,7 @@ class StartViewController: UIViewController {
     }
 
     @IBAction func rookieSessionClick(_ sender: AnyObject) {
-        if (!canProceedFurther()) {
+        if (!areAllMinimumRequiredAttributesSet()) {
             return;
         }
         
@@ -38,7 +38,7 @@ class StartViewController: UIViewController {
     }
 
     @IBAction func journeymanSessionClick(_ sender: AnyObject) {
-        if (!canProceedFurther()) {
+        if (!areAllMinimumRequiredAttributesSet()) {
             return;
         }
         
@@ -47,7 +47,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func warriorSessionClick(_ sender: AnyObject) {
-        if (!canProceedFurther()) {
+        if (!areAllMinimumRequiredAttributesSet()) {
             return;
         }
         
@@ -56,7 +56,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func ninjaSessionClick(_ sender: AnyObject) {
-        if (!canProceedFurther()) {
+        if (!areAllMinimumRequiredAttributesSet()) {
             return;
         }
         
@@ -89,7 +89,7 @@ class StartViewController: UIViewController {
         scoreLabel.text = "GAME OVER\nvotre score: \(session!.score) / \(session!.questionsCount)"
     }
     
-    func canProceedFurther() -> Bool {
+    func areAllMinimumRequiredAttributesSet() -> Bool {
         return username.hasText
     }
     
