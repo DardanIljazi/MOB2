@@ -124,6 +124,14 @@
 			path = Children_Implementations;
 			sourceTree = "<group>";
 		};
+		5D207BA9243724BC00A96146 /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Exam;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CF4FCEC01C74A5C800133338 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +152,7 @@
 		CF4FCECB1C74A5C800133338 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				5D207BA9243724BC00A96146 /* Exam */,
 				5D207B9F2437212100A96146 /* QuizSession */,
 				5D207BA3243721CC00A96146 /* UsersSession */,
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,

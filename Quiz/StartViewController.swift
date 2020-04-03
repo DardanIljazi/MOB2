@@ -11,7 +11,9 @@ import UIKit
 class StartViewController: UIViewController {
     
     @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var username: UITextField!
     
+    var _usersSessionsManager: UsersSessionsManager = UsersSessionsManager()
     var session: QuizSession?
 
     override func viewDidLoad() {
