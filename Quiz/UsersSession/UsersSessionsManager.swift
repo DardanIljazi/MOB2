@@ -28,4 +28,16 @@ class UsersSessionsManager {
     func getActualUserSession() -> UserSession {
         return _userSessions[_actualUserIndex]
     }
+    
+    func getBestPlayer() -> UserSession {
+        var actualBestPlayer: UserSession = _userSessions[0]
+        
+        _userSessions.forEach { usrSession in
+            if (usrSession.score > actualBestPlayer.score) {
+                actualBestPlayer = usrSession
+            }
+        }
+        
+        return actualBestPlayer
+    }
 }

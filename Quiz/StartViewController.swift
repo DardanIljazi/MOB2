@@ -12,6 +12,7 @@ class StartViewController: UIViewController {
     
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var username: UITextField!
+    @IBOutlet var bestPlayerLabel: UILabel!
     
     var _usersSessionsManager: UsersSessionsManager = UsersSessionsManager()
     var session: QuizSession?
@@ -28,21 +29,37 @@ class StartViewController: UIViewController {
     }
 
     @IBAction func rookieSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = RookieQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
 
     @IBAction func journeymanSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = JourneymanQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
     
     @IBAction func warriorSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = WarriorQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
     
     @IBAction func ninjaSessionClick(_ sender: AnyObject) {
+        if (!canProceedFurther()) {
+            return;
+        }
+        
         session = NinjaQuizSession(questionRepository: makeQuestionRepository())
         showSessionView(session!)
     }
@@ -58,7 +75,11 @@ class StartViewController: UIViewController {
         
         sessionViewController.session = session
         sessionViewController.sessionCompletion = {
+            
+            self._usersSessionsManager.addUserSession(userSession: UserSession(username: self.username.text!, score: session.score))
+            
             self.showScore()
+            self.showBestPlayer()
         }
         
         present(sessionViewController, animated: true, completion: nil)
@@ -66,6 +87,16 @@ class StartViewController: UIViewController {
 
     func showScore() {
         scoreLabel.text = "GAME OVER\nvotre score: \(session!.score) / \(session!.questionsCount)"
+    }
+    
+    func canProceedFurther() -> Bool {
+        return username.hasText
+    }
+    
+    func showBestPlayer() {
+        let bestUsrSession = _usersSessionsManager.getBestPlayer()
+        
+        bestPlayerLabel.text = "Meilleur: \(bestUsrSession.username) avec \(bestUsrSession.score)\n"
     }
     
 }
