@@ -77,25 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D254F9624360ED5007BFA90 /* UsersSession */ = {
-			isa = PBXGroup;
-			children = (
-				5D254F9724360F27007BFA90 /* UsersSessionsManager.swift */,
-				5D84899A2434CE8000DAE0C6 /* UserSession.swift */,
-			);
-			name = UsersSession;
-			sourceTree = "<group>";
-		};
-		5DDC301B2433E3A300161ACB /* QuizSession */ = {
+		5D207B9A24371EFF00A96146 /* QuizSession */ = {
 			isa = PBXGroup;
 			children = (
 				A96EB14C1E67014600F48F53 /* QuizSession.swift */,
-				5DDC301C2433E3F300161ACB /* Children_Implementations */,
+				5D207B9C24371F2B00A96146 /* Children_Implementations */,
 			);
-			name = QuizSession;
+			path = QuizSession;
 			sourceTree = "<group>";
 		};
-		5DDC301C2433E3F300161ACB /* Children_Implementations */ = {
+		5D207B9C24371F2B00A96146 /* Children_Implementations */ = {
 			isa = PBXGroup;
 			children = (
 				A9FBA1A11E812A72007DCBF2 /* NinjaQuizSession.swift */,
@@ -103,25 +94,34 @@
 				A9FBA19D1E8128E5007DCBF2 /* JourneymanQuizSession.swift */,
 				A9FBA19E1E8128E5007DCBF2 /* RookieQuizSession.swift */,
 			);
-			name = Children_Implementations;
+			path = Children_Implementations;
 			sourceTree = "<group>";
 		};
-		5DDC301D2433E90F00161ACB /* QuestionRepository */ = {
+		5D207B9D24371F5200A96146 /* QuestionRepository */ = {
 			isa = PBXGroup;
 			children = (
 				A9FBA1951E81191C007DCBF2 /* QuestionRepository.swift */,
-				5DDC301E2433E94B00161ACB /* Children_Implementations */,
+				5D207B9E24371F6A00A96146 /* Children_Implementations */,
 			);
-			name = QuestionRepository;
+			path = QuestionRepository;
 			sourceTree = "<group>";
 		};
-		5DDC301E2433E94B00161ACB /* Children_Implementations */ = {
+		5D207B9E24371F6A00A96146 /* Children_Implementations */ = {
 			isa = PBXGroup;
 			children = (
 				A9FBA19B1E811A6D007DCBF2 /* RemoteQuestionRepository.swift */,
 				A9FBA1971E81191C007DCBF2 /* StaticQuestionRepository.swift */,
 			);
-			name = Children_Implementations;
+			path = Children_Implementations;
+			sourceTree = "<group>";
+		};
+		5D33BD9A24371E450036BE8E /* UsersSession */ = {
+			isa = PBXGroup;
+			children = (
+				5D84899A2434CE8000DAE0C6 /* UserSession.swift */,
+				5D254F9724360F27007BFA90 /* UsersSessionsManager.swift */,
+			);
+			path = UsersSession;
 			sourceTree = "<group>";
 		};
 		CF4FCEC01C74A5C800133338 = {
@@ -144,11 +144,11 @@
 		CF4FCECB1C74A5C800133338 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				5D254F9624360ED5007BFA90 /* UsersSession */,
-				5DDC301B2433E3A300161ACB /* QuizSession */,
+				5D207B9A24371EFF00A96146 /* QuizSession */,
+				5D33BD9A24371E450036BE8E /* UsersSession */,
 				CF4FCECE1C74A5C800133338 /* AppDelegate.swift */,
 				CF4FCEF01C74A6B200133338 /* Question.swift */,
-				5DDC301D2433E90F00161ACB /* QuestionRepository */,
+				5D207B9D24371F5200A96146 /* QuestionRepository */,
 				CF4FCED01C74A5C800133338 /* ViewController.swift */,
 				CF4FCED51C74A5C800133338 /* Images.xcassets */,
 				CF4FCED71C74A5C800133338 /* LaunchScreen.xib */,
