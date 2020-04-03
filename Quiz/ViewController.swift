@@ -46,11 +46,16 @@ class ViewController: UIViewController {
     @IBAction func answerClick(_ sender: UIButton) {
         // Tell the session the chosen answer
         if session.checkAnswer(sender.currentTitle!) {
-            // Pass to the next question
-            nextOne()
+            
+            // Pass to the next question only if score is greater than 0, otherwise game is finished
+            if (session.score > 0) {
+                nextOne()
+            } else {
+                // No more question, game finished
+                makeGameOver()
+            }
+            
         }
-        
-        if (session)
     }
 
     func nextOne() {
@@ -68,8 +73,12 @@ class ViewController: UIViewController {
         }
         else {
             // No more question, game finished
-            dismiss(animated: true, completion: sessionCompletion)
+            makeGameOver()
         }
+    }
+    
+    func makeGameOver() {
+         dismiss(animated: true, completion: sessionCompletion)
     }
     
     @IBAction func hintClick(_ sender: UIButton) {

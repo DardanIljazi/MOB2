@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1F528A24372E5900CCDCCA /* ChallengeQuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1F528924372E5900CCDCCA /* ChallengeQuizSession.swift */; };
 		5D207BA52437225900A96146 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D207BA42437225900A96146 /* UserSession.swift */; };
 		5D207BA7243722C700A96146 /* UsersSessionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D207BA6243722C700A96146 /* UsersSessionsManager.swift */; };
 		A96EB14D1E67014600F48F53 /* QuizSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96EB14C1E67014600F48F53 /* QuizSession.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D1F528924372E5900CCDCCA /* ChallengeQuizSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeQuizSession.swift; sourceTree = "<group>"; };
 		5D207BA42437225900A96146 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		5D207BA6243722C700A96146 /* UsersSessionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSessionsManager.swift; sourceTree = "<group>"; };
 		A96EB14C1E67014600F48F53 /* QuizSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSession.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A9FBA1A21E812A72007DCBF2 /* WarriorQuizSession.swift */,
 				A9FBA19D1E8128E5007DCBF2 /* JourneymanQuizSession.swift */,
 				A9FBA19E1E8128E5007DCBF2 /* RookieQuizSession.swift */,
+				5D1F528924372E5900CCDCCA /* ChallengeQuizSession.swift */,
 			);
 			path = Children_Implementations;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				A9FBA19C1E811A6D007DCBF2 /* RemoteQuestionRepository.swift in Sources */,
 				CF4FCED11C74A5C800133338 /* ViewController.swift in Sources */,
 				A9FBA1A61E81317E007DCBF2 /* StartViewController.swift in Sources */,
+				5D1F528A24372E5900CCDCCA /* ChallengeQuizSession.swift in Sources */,
 				A9FBA19F1E8128E5007DCBF2 /* JourneymanQuizSession.swift in Sources */,
 				A9FBA1A41E812A72007DCBF2 /* WarriorQuizSession.swift in Sources */,
 				A9FBA1981E81191C007DCBF2 /* QuestionRepository.swift in Sources */,
