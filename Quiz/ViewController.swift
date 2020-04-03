@@ -44,17 +44,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func answerClick(_ sender: UIButton) {
+        // To avoid conditions nesting, these "states" have been created
+        var canPassToNextOne: Bool = false
+        var gameHasToBeOver: Bool = false
+        
         // Tell the session the chosen answer
         if session.checkAnswer(sender.currentTitle!) {
-            
-            // Pass to the next question only if score is greater than 0, otherwise game is finished
-            if (session.score > 0) {
-                nextOne()
-            } else {
-                // No more question, game finished
-                makeGameOver()
-            }
-            
+            canPassToNextOne = true
+        }
+        if (session.score <= 0) {
+            canPassToNextOne = false
+            gameHasToBeOver = true
+        }
+        
+        // Actions to do for each state
+        if (canPassToNextOne) {
+            nextOne()
+        }
+        if (gameHasToBeOver) {
+            makeGameOver()
         }
     }
 
