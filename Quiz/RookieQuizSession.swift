@@ -27,8 +27,16 @@ class RookieQuizSession : QuizSession {
     
     override func checkAnswer(_ answer: String) -> Bool {
         let correct = super.checkAnswer(answer)
-        if correct { _score += 1 }
+        if correct { markQuestionAsCorrect() }
         return true
+    }
+    
+    override func markQuestionAsCorrect() {
+        _score += getPointToAddToScore()
+    }
+    
+    override func getPointToAddToScore() -> Int {
+        return 1
     }
     
 }

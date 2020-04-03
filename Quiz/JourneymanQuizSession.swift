@@ -27,8 +27,24 @@ class JourneymanQuizSession : QuizSession {
     
     override func checkAnswer(_ answer: String) -> Bool {
         let correct = super.checkAnswer(answer)
-        _score += correct ? 1 : -1
+        correct ? markQuestionAsCorrect() : markQuestionAsIncorrect()
         return correct
+    }
+    
+    override func getPointToAddToScore() -> Int {
+        return 1
+    }
+    
+    override func getPointToSubstracteToScore() -> Int {
+        return -1
+    }
+    
+    override func markQuestionAsCorrect() {
+        _score += getPointToAddToScore()
+    }
+    
+    override func markQuestionAsIncorrect() {
+        _score -= getPointToSubstracteToScore()
     }
     
 }

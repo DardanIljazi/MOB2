@@ -44,6 +44,22 @@ class QuizSession {
     func checkAnswer(_ answer: String) -> Bool {
         return _currentQuestion.isCorrectAnswer(answer)
     }
+    
+    func markQuestionAsCorrect() {
+        _score += getPointToAddToScore()
+    }
+    
+    func markQuestionAsIncorrect() {
+        _score -= getPointToSubstracteToScore()
+    }
+    
+    func getPointToAddToScore() -> Int {
+        return 0
+    }
+    
+    func getPointToSubstracteToScore() -> Int {
+        return 0
+    }
 
     // For time based sessions, call it once per second and pass to the next question if true is returned
     func tickAndShouldPassToNextQuestion() -> Bool {

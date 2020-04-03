@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet var answerButton2: UIButton!
     @IBOutlet var answerButton3: UIButton!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var passNextOneButton: UIButton!
     
     var session : QuizSession!
     var sessionCompletion: (() -> Void)!
     var timer: Timer!
+    var passNextOneButtonCountRemaining = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,17 @@ class ViewController: UIViewController {
         nextOne()
     }
 
+    @IBAction func passNextOneButtonTouched(_ sender: UIButton) {
+        session.markQuestionAsCorrect()
+        nextOne()
+        
+        passNextOneButtonCountRemaining -= 1
+        
+        if (passNextOneButtonCountRemaining == 0) {
+            passNextOneButton.isHidden = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
