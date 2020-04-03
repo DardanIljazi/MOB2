@@ -39,6 +39,10 @@ class QuizSession {
         return _currentQuestion
     }
     
+    func hasTheQuizToBeOver() -> Bool {
+        return false
+    }
+    
     func checkAnswer(_ answer: String) -> Bool {
         return _currentQuestion.isCorrectAnswer(answer)
     }

@@ -15,7 +15,11 @@ class ChallengeQuizSession : JourneymanQuizSession {
     }
 
     override func checkAnswer(_ answer: String) -> Bool {
-        let response = super.checkAnswer(answer)
+        super.checkAnswer(answer)
         return true
+    }
+    
+    override func hasTheQuizToBeOver() -> Bool {
+        return score <= 0
     }
 }

@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             currentGameState = .CanGoToNextQuestion
         }
         
-        if (session.score <= 0) {
+        if (session.hasTheQuizToBeOver()) {
             currentGameState = .HasToBeOver
         }
 
