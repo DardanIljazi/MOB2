@@ -96,7 +96,7 @@ class StartViewController: UIViewController {
     func showBestPlayer() {
         let bestUsrSession = _usersSessionsManager.getBestPlayer()
         
-        bestPlayerLabel.text = "Meilleur: \(bestUsrSession.username) avec \(bestUsrSession.score)\n"
+        bestPlayerLabel.text = "Meilleur: \(bestUsrSession.username) avec \(bestUsrSession.score) pts\n"
     }
     
 }

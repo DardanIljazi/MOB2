@@ -13,7 +13,7 @@ class RookieQuizSession : QuizSession {
     
     init(questionRepository: QuestionRepository) {
         _currentQuestionCount = 0
-        super.init(questionRepository: questionRepository, totalQuestionCount: 10)
+        super.init(questionRepository: questionRepository, totalQuestionCount: 2)
     }
     
     override func nextQuestion() -> Question? {
