@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         case HasToBeOver
     }
     
-    var currentGameState: QuizState = .CanGoToNextQuestion
+    var urrentQuizState: QuizState = .CanGoToNextQuestion
     
     
     override func viewDidLoad() {
@@ -54,15 +54,15 @@ class ViewController: UIViewController {
     @IBAction func answerClick(_ sender: UIButton) {
         // Tell the session the chosen answer
         if session.checkAnswer(sender.currentTitle!) {
-            currentGameState = .CanGoToNextQuestion
+            urrentQuizState = .CanGoToNextQuestion
         }
         
         if (session.hasTheQuizToBeOver()) {
-            currentGameState = .HasToBeOver
+            urrentQuizState = .HasToBeOver
         }
 
         // Decide action/method to call to take based on state
-        switch currentGameState {
+        switch urrentQuizState {
         case .CanGoToNextQuestion:
             nextOne()
         case .HasToBeOver:
